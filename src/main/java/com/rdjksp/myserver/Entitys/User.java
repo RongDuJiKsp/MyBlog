@@ -15,9 +15,9 @@ public class User {
     private String userName;
     @Column(name = "nick_name")
     private String userNickName;
-    private AuthorityGroupEnum authorityGroupEnum;
-    @Transient
+    @Column(name = "group_name")
     private String GroupName;
+    private AuthorityGroupEnum authorityGroupEnum;
     private String password;
     private String sex;
     private int eco;

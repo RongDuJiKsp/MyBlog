@@ -16,11 +16,11 @@ repositories {
     maven{ url 'https://maven.aliyun.com/repository/public'}
     maven{ url 'https://maven.aliyun.com/repository/google'}
     mavenCentral()
-    jcenter()
 
 }
 
 dependencies {
+    implementation 'com.alibaba.fastjson2:fastjson2:2.0.40'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
