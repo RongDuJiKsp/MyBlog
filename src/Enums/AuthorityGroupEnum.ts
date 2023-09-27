@@ -4,6 +4,7 @@ enum AuthorityGroupEnum {
     User = "User",
     Visitor = "Visitor",
     VipUser = "VipUser",
+    None="None"
 }
 
 export default AuthorityGroupEnum;

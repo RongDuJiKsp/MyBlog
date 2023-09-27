@@ -5,6 +5,9 @@ import {useState} from "react";
 import AuthorityGroupEnum from "../../Enums/AuthorityGroupEnum";
 import AxiosManager from "../../GobalOps/AxiosManager";
 import User from "../../Entity/User";
+import ProjectConfig from "../../ProjectConfig";
+import StatusCodeEnum from "../../Enums/StatusCodeEnum";
+import ObjHandle from "../../GobalOps/ObjHandle";
 
 const RegisterComponent = () => {
     const app = App.useApp();
@@ -13,8 +16,8 @@ const RegisterComponent = () => {
     const [authority, setAuthority] = useState(AuthorityGroupEnum.User);
     const Submit = (): void => {
         let user = new User(form.getFieldValue("userNickName"), form.getFieldValue("userName"), authority, form.getFieldValue("password"), form.getFieldValue("sex"));
-        AxiosManager.post("http://localhost:8080/api/user", user, {}).then(r => {
-            if (r.data === "Ok") app.message.success("Register OK").then();
+        AxiosManager.post(ProjectConfig.backendUrl + "/api/user", user, {}).then(r => {
+            if (r.data === StatusCodeEnum.Success) app.message.success("Register OK").then();
             else app.message.error(r.data).then();
         }, e => {
             app.message.error(e.toString()).then();
@@ -45,9 +48,10 @@ const RegisterComponent = () => {
             required: true,
             message: "请输入性别"
         }]}><Input/></Form.Item>
-        <Form.Item label="用户权限组"><Select options={Object.keys(AuthorityGroupEnum).map(r => {
-            return {label: r, value: r}
-        })} defaultValue={authority} onChange={(e) => {
+        <Form.Item label="用户权限组"><Select
+            options={ObjHandle.popLastAndReturnThis(Object.keys(AuthorityGroupEnum).map(r => {
+                return {label: r, value: r}
+            }))} defaultValue={authority} onChange={(e) => {
             setAuthority(e);
         }}/></Form.Item>
         <Form.Item><Button type={"primary"} htmlType={"submit"}>Submit</Button></Form.Item>
