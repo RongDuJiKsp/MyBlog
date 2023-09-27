@@ -4,7 +4,7 @@ import Input from "antd/es/input/Input";
 import {useState} from "react";
 import AuthorityGroupEnum from "../../Enums/AuthorityGroupEnum";
 import AxiosManager from "../../GobalOps/AxiosManager";
-import User from "../../Entity/User";
+import User from "../../Entitys/User";
 import ProjectConfig from "../../ProjectConfig";
 import StatusCodeEnum from "../../Enums/StatusCodeEnum";
 import ObjHandle from "../../GobalOps/ObjHandle";
