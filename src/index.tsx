@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Main from "./Main";
-import {DevSupport} from "@react-buddy/ide-toolbox/dist/previews/dev-support";
+import {DevSupport} from '@react-buddy/ide-toolbox';
 import {ComponentPreviews, useInitial} from "./dev";
 
 const root = ReactDOM.createRoot(
