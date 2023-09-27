@@ -2,12 +2,12 @@ import {useForm} from "antd/es/form/Form";
 import {App, Button, Form, Select} from "antd";
 import Input from "antd/es/input/Input";
 import {useState} from "react";
-import AuthorityGroupEnum from "../../Enums/AuthorityGroupEnum";
-import AxiosManager from "../../GobalOps/AxiosManager";
-import User from "../../Entitys/User";
-import ProjectConfig from "../../ProjectConfig";
-import StatusCodeEnum from "../../Enums/StatusCodeEnum";
-import ObjHandle from "../../GobalOps/ObjHandle";
+import AuthorityGroupEnum from "../../../Enums/AuthorityGroupEnum";
+import AxiosManager from "../../../GobalOps/AxiosManager";
+import User from "../../../Entitys/User";
+import ProjectConfig from "../../../ProjectConfig";
+import StatusCodeEnum from "../../../Enums/StatusCodeEnum";
+import ObjHandle from "../../../GobalOps/ObjHandle";
 
 const RegisterComponent = () => {
     const app = App.useApp();
