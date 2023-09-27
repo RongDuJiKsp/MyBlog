@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
 
 const AxiosManager = {
-    post: (url, dataObj, extraObj) => {
-        if(dataObj===undefined) dataObj={};
-        if(extraObj===undefined) extraObj={};
-        return new Promise((resolve, reject) => {
+    post: (url: string, dataObj?: object, extraObj?: object) => {
+        if (dataObj === undefined) dataObj = {};
+        if (extraObj === undefined) extraObj = {};
+        return new Promise<AxiosResponse>((resolve, reject) => {
             axios({
                 headers: {"Content-Type": "application/json;charset=utf8"},
                 data: dataObj,
@@ -12,16 +12,16 @@ const AxiosManager = {
                 method: "post",
                 ...extraObj
             }).then(r => {
-                resolve(r);
+                resolve(r as AxiosResponse);
             }, e => {
                 reject(e);
             });
         })
     },
-    get: (url, dataObj, extraObj) => {
-        if(dataObj===undefined) dataObj={};
-        if(extraObj===undefined) extraObj={};
-        return new Promise((resolve, reject) => {
+    get: (url: string, dataObj?: object, extraObj?: object) => {
+        if (dataObj === undefined) dataObj = {};
+        if (extraObj === undefined) extraObj = {};
+        return new Promise<AxiosResponse>((resolve, reject) => {
             axios({
                 data: dataObj,
                 url: url,

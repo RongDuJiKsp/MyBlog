@@ -26,7 +26,7 @@ const useLogin = () => {
             userGroup: AuthorityGroupEnum.None,
             token: "",
         });
-        return  StatusCodeEnum.Success;
+        return StatusCodeEnum.Success;
     }
     return {
         userStatus: userStatus,
